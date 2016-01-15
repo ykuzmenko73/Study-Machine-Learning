@@ -97,13 +97,13 @@ while ~isempty(email_contents)
     %       str2). It will return 1 only if the two strings are equivalent.
     %
 
-
-
-
-
-
-
-
+	ind = find(strcmp(getVocabList, str), 1);
+	if length(ind) > 0
+%		fprintf("'%s' - %d\n", str, ind);
+		word_indices = [word_indices ; ind];		
+	else
+%		fprintf("'%s' - Not in dictionary\n", str);
+	endif
 
 
     % =============================================================
