@@ -56,6 +56,10 @@ J = 1/2*sum( sum( R .* ( (X*Theta' - Y) .* (X*Theta' - Y) ) ) );
 %	end
 %end
 
+X_grad = ( R .* (X*Theta' - Y) * Theta );
+
+Theta_grad = ((R .* (X*Theta' - Y))' * X);
+
 grad = [X_grad(:); Theta_grad(:)];
 
 end
